@@ -1,0 +1,163 @@
+﻿@page "/Shop"
+
+<PageTitle>Shop</PageTitle>
+
+<header>
+    <nav>
+        <ul>
+            <li><a href="/"> Start </a></li>
+            <li><a href="/Shop"> Shop </a></li>
+            <li><a href="/Profile"> Profil </a></li>
+            <li><a href="/Login"> Anmelden </a></li>
+        </ul>
+    </nav>
+</header>
+
+<div class="container">
+    <h1>Shop</h1>
+</div>
+
+<div class="card katze">
+    <img src="https://media.os.fressnapf.com/cms/2021/05/kosten_katze_1200x527.jpg?t=seoimg_937" class="card-img-top">
+    <div class="card-body">
+        <h5 class="card-title">Katze</h5>
+        <p class="card-text">Gewöhnlich</p>
+    </div>
+</div>
+<div class="card fuchs">
+    <img src="https://image.geo.de/33687588/t/cY/v1/w1440/r1/-/fuchs-bild3.jpg" class="card-img-top">
+    <div class="card-body">
+        <h5 class="card-title">Fuchs</h5>
+        <p class="card-text">Selten</p>
+    </div>
+</div>
+<div class="card schlange">
+    <img src="https://image.geo.de/33592814/t/tp/v4/w1440/r1/-/microsoftteams-image--1-.jpg" class="card-img-top">
+    <div class="card-body">
+        <h5 class="card-title">Schlange</h5>
+        <p class="card-text">Episch</p>
+    </div>
+</div>
+<div class="card loewe">
+    <img src="https://www.peta.de/wp-content/uploads/2021/06/loewe-kopf-ingo-stiller-3tkxfe2GocY-c-unsplash.jpg" class="card-img-top">
+    <div class="card-body">
+        <h5 class="card-title">Löwe</h5>
+        <p class="card-text">Legendär</p>
+    </div>
+</div>
+<div class="card drache">
+    <img src="https://mim.p7s1.io/pis/ld/7cb4zChLCVyZ-c1vEwXZAanB-DJ78rnq2V2gRWTHzVV6NywNWMSJCEGmZ4YSENP-WRL0b9lo2zmFQhTMhL_pkAfRVJ5kYjddQy17P3vfpacvxpkL0uTW3V81YSmTqQ66iDSmfEJPXL4/profile:original?rect=0%2C0%2C5870%2C3302&w=1070" class="card-img-top">
+    <div class="card-body">
+        <h5 class="card-title">Drache</h5>
+        <p class="card-text">Mythisch</p>
+    </div>
+</div>
+
+@code {
+    
+}
+
+<style>
+    body {
+        background-image: url("https://c4.wallpaperflare.com/wallpaper/937/885/158/monochrome-black-clouds-mountains-wallpaper-preview.jpg");
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+    }
+
+    header {
+        background-color: #333;
+        padding: 10px 0;
+    }
+
+    nav ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0px;
+        text-align: center;
+    }
+
+    nav ul li {
+        display: inline;
+        margin-left: 100px;
+        margin-right: 100px;
+    }
+
+    nav ul li a {
+        text-decoration: none;
+        color: #fff;
+        padding: 8px 16px;
+        border-radius: 5px;
+        transition: background-color 0.3s ease;
+    }
+
+    nav ul li a:hover {
+        background-color: #555;
+    }
+
+    .container {
+        text-align: center;
+    }
+
+    .card-img-top {
+        width: 100%;
+        height: 300px;
+        object-fit: cover;
+    }
+
+    .card {
+        width: 18%;
+        height: auto;
+        color: white;
+        text-align: center;
+        margin: 10px;
+        display: inline-block;
+        border-radius: 5px;
+        overflow: hidden;
+        position: relative;
+        transition: transform 0.3s ease;
+    }
+
+        .card:hover {
+            transform: scale(1.05);
+        }
+
+    .katze {
+        background-image: url('https://t4.ftcdn.net/jpg/01/99/66/61/360_F_199666182_Nv5YbO1N0MPo4D9VYNBzFSq15qyQnqT1.jpg');
+        background-size: cover;
+        background-position: center;
+    }
+
+    .fuchs {
+        background-image: url('https://img.freepik.com/vektoren-kostenlos/blauer-notleidender-schmutz-texturhintergrund_1409-2927.jpg');
+        background-size: cover;
+        background-position: center;
+    }
+
+    .schlange {
+        background-image: url('https://media.istockphoto.com/id/1282079393/photo/abstract-purple-texture-background.webp?b=1&s=170667a&w=0&k=20&c=Cp39kEmIbx-YOqhltnA1YxEINLiGoUMRlTMKw_fJbGs=');
+        background-size: cover;
+        background-position: center;
+    }
+
+    .loewe {
+        background-image: url('https://img.goodfon.com/original/2560x1440/c/ba/gold-texture-golden-zoloto-fon.jpg');
+        background-size: cover;
+        background-position: center;
+    }
+
+    .drache {
+        background-image: url('https://i.etsystatic.com/28921914/r/il/d609d7/3871586228/il_fullxfull.3871586228_47zp.jpg');
+        background-size: cover;
+        background-position: center;
+    }
+
+    .card-body {
+        background: rgba(0, 0, 0, 0.3);
+        padding: 10px;
+    }
+
+    .card-title, .card-text {
+        margin: 0;
+    }
+</style>

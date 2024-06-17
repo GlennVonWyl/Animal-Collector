@@ -1,0 +1,167 @@
+﻿@page "/Profile"
+@inject Animal_Collector.Models.CardService CardService
+
+<PageTitle>Profil</PageTitle>
+
+<header>
+    <nav>
+        <ul>
+            <li><a href="/"> Start </a></li>
+            <li><a href="/Shop"> Shop </a></li>
+            <li><a href="/Profile"> Profil </a></li>
+            <li><a href="/Login"> Anmelden </a></li>
+        </ul>
+    </nav>
+</header>
+
+<div class="container">
+    <h1>Deine Karten</h1>
+</div>
+
+<div class="card-container">
+    @foreach (var card in CardService.GetCards())
+    {
+        <div class="card @GetCardClass(card)" style="width: 18%;">
+            <img src="@card.ImageUrl" class="card-img-top">
+            <div class="card-body">
+                <h5 class="card-title">@card.Title</h5>
+                <p class="card-text">@card.Description</p>
+            </div>
+        </div>
+    }
+</div>
+
+@code {
+    string GetCardClass(Animal_Collector.Models.Card card)
+    {
+        switch (card.Title.ToLower())
+        {
+            case "katze":
+                return "katze";
+            case "fuchs":
+                return "fuchs";
+            case "schlange":
+                return "schlange";
+            case "löwe":
+                return "loewe";
+            case "drache":
+                return "drache";
+            default:
+                return "";
+        }
+    }
+}
+
+<style>
+    body {
+        background-image: url("https://c4.wallpaperflare.com/wallpaper/937/885/158/monochrome-black-clouds-mountains-wallpaper-preview.jpg");
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+    }
+
+    header {
+        background-color: #333;
+        padding: 10px 0;
+    }
+
+    nav ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0px;
+        text-align: center;
+    }
+
+    nav ul li {
+        display: inline;
+        margin-left: 100px;
+        margin-right: 100px;
+    }
+
+    nav ul li a {
+        text-decoration: none;
+        color: #fff;
+        padding: 8px 16px;
+        border-radius: 5px;
+        transition: background-color 0.3s ease;
+    }
+
+    nav ul li a:hover {
+        background-color: #555;
+    }
+
+    .container {
+        text-align: center;
+    }
+
+    .card-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+
+    .card {
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        transition: transform 0.3s ease;
+        width: 18%;
+        height: auto;
+        color: white;
+        text-align: center;
+        margin: 10px;
+        display: inline-block;
+        border-radius: 5px;
+        overflow: hidden;
+        position: relative;
+    }
+
+        .card:hover {
+            transform: scale(1.05);
+        }
+
+    .card-img-top {
+        width: 100%;
+        height: 300px;
+        object-fit: cover;
+    }
+
+    .katze {
+        background-image: url('https://t4.ftcdn.net/jpg/01/99/66/61/360_F_199666182_Nv5YbO1N0MPo4D9VYNBzFSq15qyQnqT1.jpg');
+        background-size: cover;
+        background-position: center;
+    }
+
+    .fuchs {
+        background-image: url('https://img.freepik.com/vektoren-kostenlos/blauer-notleidender-schmutz-texturhintergrund_1409-2927.jpg');
+        background-size: cover;
+        background-position: center;
+    }
+
+    .schlange {
+        background-image: url('https://media.istockphoto.com/id/1282079393/photo/abstract-purple-texture-background.webp?b=1&s=170667a&w=0&k=20&c=Cp39kEmIbx-YOqhltnA1YxEINLiGoUMRlTMKw_fJbGs=');
+        background-size: cover;
+        background-position: center;
+    }
+
+    .loewe {
+        background-image: url('https://img.goodfon.com/original/2560x1440/c/ba/gold-texture-golden-zoloto-fon.jpg');
+        background-size: cover;
+        background-position: center;
+    }
+
+    .drache {
+        background-image: url('https://i.etsystatic.com/28921914/r/il/d609d7/3871586228/il_fullxfull.3871586228_47zp.jpg');
+        background-size: cover;
+        background-position: center;
+    }
+
+    .card-body {
+        background: rgba(0, 0, 0, 0.3);
+        padding: 10px;
+    }
+
+    .card-title, .card-text {
+        margin: 0;
+    }
+</style>
